@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+garage_1 = Garage.create(address: "155 N St", name: "We Park it", spot_count: 200, cost: 12)
+customer_1 = Customer.create(
+        garage_id: garage_1.id,
+        member_since: 12,
+        currently_parked: true
+)
+customer_2 = Customer.create(
+  garage_id: garage_1.id,
+  member_since: 8,
+  currently_parked: false
+)
