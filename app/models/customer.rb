@@ -1,4 +1,5 @@
 class Customer < ApplicationRecord
-  validates_presence_of :member_since, :currently_parked
+  inclusion_of :currently_parked
+  validates_presence_of :member_since
   belongs_to :garage
 end

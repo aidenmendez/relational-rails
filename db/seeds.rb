@@ -20,7 +20,7 @@ customer_2 = Customer.create!(
 school_1 = School.create!(
           name: "Strive Prep", 
           number_of_teachers: 30, 
-          is_public: true       
+          is_public: false       
 )
 
 student_1 = Student.create!(
