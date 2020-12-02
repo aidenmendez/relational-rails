@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_014902) do
+ActiveRecord::Schema.define(version: 2020_12_02_025203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,5 +33,24 @@ ActiveRecord::Schema.define(version: 2020_12_02_014902) do
     t.integer "cost"
   end
 
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+    t.integer "number_of_teachers"
+    t.boolean "is_public"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.integer "grade"
+    t.boolean "in_district"
+    t.bigint "school_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_id"], name: "index_students_on_school_id"
+  end
+
   add_foreign_key "customers", "garages"
+  add_foreign_key "students", "schools"
 end
