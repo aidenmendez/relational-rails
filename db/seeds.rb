@@ -9,7 +9,7 @@ garage_1 = Garage.create!(address: "155 N St", name: "We Park it", spot_count: 2
 customer_1 = Customer.create!(
         garage_id: garage_1.id,
         member_since: 12,
-        currently_parked: true
+        # currently_parked: true
 )
 customer_2 = Customer.create!(
   garage_id: garage_1.id,
