@@ -1,0 +1,13 @@
+<h1>Create New Garage</h1>
+<form action = '/garages' method='post'>
+<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>%'>
+<p>Name:</p>
+  <input type = 'text' name='garage[name]'/><br/>
+<p>Address:</p>
+  <input type='text' name='garage[address]'/><br/>
+<p>Spot Count:</p>
+  <input type='number' name='garage[spot_count]'/><br/>
+<p>Cost:</p>
+  <input type='number' name='garage[cost]'/><br/>
+<input type='submit'/>
+</form>

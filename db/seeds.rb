@@ -8,7 +8,6 @@
 Garage.destroy_all
 Customer.destroy_all
 
-
 garage_1 = Garage.create!(
         address: "155 N St", 
         name: "'Not A Lot' Parking Garage", 
