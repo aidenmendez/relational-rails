@@ -1,0 +1,14 @@
+<h1>Update <% @garage.name %> </h1>
+<form action = '/garages/<%= @garage.id %>' method='post'>
+<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>%'>
+<input type='hidden' name="_method" value="PATCH" />
+<p>Name:</p>
+  <input type = 'text' name='garage[name]' value="<%= @garage.name %>"/><br/>
+<p>Address:</p>
+  <input type='text' name='garage[address]' value="<%= @garage.address %>"/><br/>
+<p>Spot Count:</p>
+  <input type='number' name='garage[spot_count]' value="<%= @garage.spot_count %>"/><br/>
+<p>Cost:</p>
+  <input type='number' name='garage[cost]' value="<%= @garage.cost %>"/><br/>
+<input type='submit'/>
+</form>

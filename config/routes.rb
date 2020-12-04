@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   get '/garages', to: 'garages#index'
   get '/garages/new', to: 'garages#new'
   post '/garages', to: 'garages#create'
+  
+  get '/garages/:id/edit', to: 'garages#edit'
   get '/garages/:id', to: 'garages#show'
 
-
+  patch '/garages/:id', to: 'garages#update'
   
 end
