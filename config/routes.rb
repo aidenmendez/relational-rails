@@ -9,4 +9,10 @@ Rails.application.routes.draw do
   delete '/schools/:id', to: 'schools#destroy' 
 
   get '/students', to: 'students#index'
+  get '/students/:id', to: 'students#show'
+  get '/schools/:id/students', to: 'school_students#index'
+  # get '/schools/:id/students', to: 'schools#students_index'
+  get '/schools/:id/students/new', to: 'school_students#new'
+  # get '/schools/:id/students/new', to: 'schools#new'
+
 end
