@@ -1,7 +1,7 @@
 <h1>Garages</h1>
-<a href='/garages/new'>New Garage</a>
-</br>
+<li><a href='/garages/new'>New Garage</a></li><br/>
 <h3>Garages:</h3>
-<% @garages.each do |garage| %> </br>
-  <%= garage.name %>
+<% @garages.each do |garage| %> <br/>
+  <%# <% require 'pry'; binding.pry  %>
+  <li><%= garage.name %></li>
 <% end %>

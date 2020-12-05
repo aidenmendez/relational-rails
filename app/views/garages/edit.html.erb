@@ -1,0 +1,20 @@
+<h1>Update <%= @garage.name %> </h1>
+<%= form_tag "/garages/#{@garage.id}", method: :patch do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name, @garage.name %><br/>
+
+  <%= label_tag :address %>
+  <%= text_field_tag :address, @garage.address %><br/>
+
+  <%= label_tag :spot_count %>
+  <%= number_field_tag :spot_count, @garage.spot_count %> <br/>
+
+  <%= label_tag :cost %>
+  <%= number_field_tag :cost, @garage.cost %> <br/>
+
+  <%= label_tag :multi_level %>
+  <%= text_field_tag :multi_level, "#{@garage.multi_level}"  %><br/>
+
+  <%= submit_tag 'Update Garage' %>
+
+<% end %>

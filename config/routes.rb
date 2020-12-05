@@ -16,6 +16,16 @@ Rails.application.routes.draw do
   # get '/schools/:id/students/new', to: 'schools#new'
 
   get '/garages', to: 'garages#index'
+  get '/garages/new', to: 'garages#new'
+  post '/garages', to: 'garages#create'
+  
+  get '/garages/:id/edit', to: 'garages#edit'
   get '/garages/:id', to: 'garages#show'
 
+<<<<<<< HEAD
+  patch '/garages/:id', to: 'garages#update'
+  
+  delete '/garages/:id', to: 'garages#destroy'
+=======
+>>>>>>> 80520cc46f3e2244942729958f81fd677375afaf
 end
