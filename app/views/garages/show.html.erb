@@ -1,9 +1,14 @@
 <h1> <%= @garage.name %> </h1>
-<a href='/garages/<%= @garage.id %>/edit'>Update Garage</a>
-<%= button_to 'Delete Garage', "/garages/#{ @garage.id }", method: :delete %>
-<%= link_to "Delete Garage", "/garages/#{ @garage.id }", method: :delete%>
 
-<p> address: <%= @garage.address %> </p>
-<p> cost: <%= @garage.cost %> </p>
-<p> multi-level: <%= @garage.multi_level %> </p>
-<p> spot count: <%= @garage.spot_count %> </p>
+<%= link_to "Update", "/garages/#{ @garage.id}/edit" %> <br/>
+<%= link_to "Delete", "/garages/#{ @garage.id }", method: :delete%>
+
+<%# button instead of link %>
+<%# <%= button_to 'Delete Garage', "/garages/#{ @garage.id }", method: :delete %>
+
+<ul>
+  <li> address: <%= @garage.address %> </li>
+  <li> cost: <%= @garage.cost %> </li>
+  <li> multi-level: <%= @garage.multi_level %> </li>
+  <li> spot count: <%= @garage.spot_count %> </li>
+</ul>
