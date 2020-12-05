@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20201202014232_change_default_value_for_currently_parked.rb
