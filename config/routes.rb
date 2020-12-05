@@ -22,10 +22,7 @@ Rails.application.routes.draw do
   get '/garages/:id/edit', to: 'garages#edit'
   get '/garages/:id', to: 'garages#show'
 
-<<<<<<< HEAD
   patch '/garages/:id', to: 'garages#update'
   
   delete '/garages/:id', to: 'garages#destroy'
-=======
->>>>>>> 80520cc46f3e2244942729958f81fd677375afaf
 end
