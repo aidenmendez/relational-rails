@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   patch '/garages/:id', to: 'garages#update'
   
+  delete '/garages/:id', to: 'garages#destroy'
 end
