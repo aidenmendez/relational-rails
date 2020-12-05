@@ -1,0 +1,14 @@
+<h1> Add a student</h1>
+
+<%= form_tag "/schools/#{@school.id}/students", method: :patch do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name, "#{@student.name}" %> 
+
+  <%= label_tag :grade %>
+  <%= text_field_tag :grade, "#{@student.grade}" %>
+
+  <%= label_tag :in_district %>
+  <%= text_field_tag :in_district, "#{@student.in_district}" %>
+
+  <%= submit_tag 'Add A Student' %>
+<% end %>
