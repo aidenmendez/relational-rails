@@ -1,0 +1,9 @@
+<h1> List of Students for <%= "#{@school.name}"  %></h1>
+
+<% @school.students.each do |student|%>
+ <h>Student Name: <%= "#{student.name}" %></p>
+ <p>Grade: <%= "#{student.grade}" %></p>
+ <p>Are they in District? <%= "#{student.in_district}" %></p><br>
+ <% end %>
+
+<%= link_to "Add A Student", "/schools/#{@school.id}/students/new" %>

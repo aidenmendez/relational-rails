@@ -1,7 +1,7 @@
 <h1> All Students </h1>
 
 <%  @students.each do |student| %>
-<h2> Name: <%= "#{student.name}" %></h2>
+<h2> Name: <%= link_to "#{student.name}", "/students/#{student.id}" %></h2>
 <h2> Grade: <%= "#{student.grade}" %></h2>
 <h2> In District?: <%= "#{student.in_district}" %></h2>
 <% end  %>
