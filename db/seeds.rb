@@ -5,11 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Garage.destroy_all
-Customer.destroy_all
+Garage.destroy_all 
+Customer.destroy_all 
 
-School.destroy_all
-Student.destroy_all
+School.destroy_all 
+Student.destroy_all 
 
 garage_1 = Garage.create!(
         address: "155 N St", 
@@ -67,8 +67,6 @@ garage_2.customers.create!(
   currently_parked: true
 )
 
-# =====================================================
-
 school_1 = School.create!(
           name: "Strive Prep", 
           number_of_teachers: 30, 
@@ -88,3 +86,18 @@ student_2 = Student.create!(
           in_district: true,
           school_id: school_1.id 
 )
+
+student_3 = Student.create!(
+          name: "Itachi Uchiha", 
+          grade: 7,
+          in_district: true,
+          school_id: school_1.id 
+)
+
+student_4 = Student.create!(
+          name: "Mikasa Ackerman", 
+          grade: 7,
+          in_district: true,
+          school_id: school_1.id 
+)
+

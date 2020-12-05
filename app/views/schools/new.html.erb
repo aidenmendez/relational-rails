@@ -1,0 +1,9 @@
+<%= form_tag "/schools" do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+  <%= label_tag :number_of_teachers %>
+  <%= text_field_tag :number_of_teachers %>
+  <%= label_tag :is_public %>
+  <%= text_field_tag :is_public %>
+  <%= submit_tag 'Create School' %>
+<% end %>

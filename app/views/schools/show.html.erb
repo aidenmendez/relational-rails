@@ -1,0 +1,10 @@
+<h1>Attributes for <%= @school.name %></h1>
+
+  <h3>School Name: <%= @school.name %></h3>
+  <p>School ID: <%= @school.id %></p>
+  <p>Number of Teachers: <%= @school.number_of_teachers %> </p>
+  <p>Is it public? <%= @school.is_public %> </p>
+
+<%= link_to "Update School", "/schools/#{@school.id}/edit" %>
+<%= link_to "Delete School", "/schools/#{@school.id}", method: :delete %>
+

@@ -1,0 +1,7 @@
+<h1> All Schools </h1>
+
+<% @schools.each do |school|%>
+ <h2><%= link_to "#{school.name}", "/schools/#{school.id}" %></h2>
+ <% end %>
+
+<%= link_to "New School", '/schools/new' %>
