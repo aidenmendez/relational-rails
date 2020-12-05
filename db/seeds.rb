@@ -41,12 +41,14 @@ student_2 = Student.create!(
           grade: 7,
           in_district: true,
           school_id: school_1.id 
+)
 
 student_3 = Student.create!(
           name: "Itachi Uchiha", 
           grade: 7,
           in_district: true,
           school_id: school_1.id 
+)
 
 student_4 = Student.create!(
           name: "Mikasa Ackerman", 
