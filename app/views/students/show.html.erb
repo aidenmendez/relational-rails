@@ -4,3 +4,5 @@
  <h3>Grade: <%= @student.grade %></h3>
  <h3>In District: <%= @student.in_district %></h3>
  <h3>ID: <%= @student.id %></h3>
+
+ <%= link_to "Update Student", "/students/#{@student.id}/edit" %>
