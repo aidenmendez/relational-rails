@@ -1,4 +1,4 @@
-<h1>Customers</h1>
+<h1> <%= @garage.name %> Customers</h1>
 
 <% @customers.each do |customer| %>
   <h2><%= customer.name %></h2>
@@ -6,8 +6,6 @@
   <p>License plate: <%= customer.license_plate %></p>
 
   <p>Member since: <%= customer.member_since %></p>
-
-  <p>Parking Garage: <%= customer.garage.name %></p>
 
   <p>Currently parked: <%= customer.currently_parked %></p><br/>
 <% end %>

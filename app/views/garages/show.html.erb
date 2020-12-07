@@ -1,5 +1,6 @@
 <h1> <%= @garage.name %> </h1>
 
+<%= link_to "View customers", "/garages/#{ @garage.id }/customers" %><br/>
 <%= link_to "Update", "/garages/#{ @garage.id}/edit" %> <br/>
 <%= link_to "Delete", "/garages/#{ @garage.id }", method: :delete%>
 

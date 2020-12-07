@@ -18,13 +18,12 @@ Rails.application.routes.draw do
   get '/garages', to: 'garages#index'
   get '/garages/new', to: 'garages#new'
   post '/garages', to: 'garages#create'
-  
   get '/garages/:id/edit', to: 'garages#edit'
   get '/garages/:id', to: 'garages#show'
-
   patch '/garages/:id', to: 'garages#update'
-  
   delete '/garages/:id', to: 'garages#destroy'
+  get '/garages/:id/customers', to: 'garage_customers#index'
 
   get '/customers', to: 'customers#index'
+  get '/customers/:id', to: 'customers#show'
 end
