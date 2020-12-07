@@ -44,11 +44,4 @@ class SchoolsController < ApplicationController
     School.destroy(params[:id])
     redirect_to '/schools'
   end
-
-  # def students_index 
-  #   @school = School.find(params[:id])
-  #   # School.first.students
-  #   # require 'pry'; binding.pry
-  # end
-
 end
