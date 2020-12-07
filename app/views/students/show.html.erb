@@ -6,3 +6,4 @@
  <h3>ID: <%= @student.id %></h3>
 
  <%= link_to "Update Student", "/students/#{@student.id}/edit" %>
+<%= link_to "Delete Student", "/students/#{@student.id}", method: :delete %>
