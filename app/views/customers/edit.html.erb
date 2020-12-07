@@ -1,0 +1,17 @@
+<h1>Update Customer</h1>
+<%= form_tag "/customers/#{@customer.id}", method: :patch do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name, @customer.name %><br/>
+
+  <%= label_tag :license_plate %>
+  <%= text_field_tag :license_plate, @customer.license_plate %><br/>
+
+  <%= label_tag :currently_parked %>
+  <%= number_field_tag :currently_parked, @customer.currently_parked %> <br/>
+
+  <%= label_tag :member_since %>
+  <%= number_field_tag :member_since, @customer.member_since %> <br/>
+
+  <%= submit_tag 'Update Customer' %>
+
+<% end %>

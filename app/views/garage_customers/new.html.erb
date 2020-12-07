@@ -1,0 +1,12 @@
+<h1>Create a New Customer for <%= @garage.name %> </h1>
+
+<%= form_tag "/garages/#{@garage.id}/customers", method: :post do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %><br/>
+
+  <%= label_tag :license_plate %>
+  <%= text_field_tag :license_plate %><br/>
+
+  <%= submit_tag "Create Customer" %>
+
+<% end %>
