@@ -1,6 +1,5 @@
 class SchoolStudentsController < ApplicationController
   def index 
-    # require 'pry'; binding.pry
     @school = School.find(params[:id])
   end
 
@@ -9,7 +8,6 @@ class SchoolStudentsController < ApplicationController
   end
 
   def create  
-    # require 'pry'; binding.pry
     @school = School.find(params[:id])
     student = Student.new({
       name: params[:name], 
@@ -21,6 +19,5 @@ class SchoolStudentsController < ApplicationController
     student.save 
 
     redirect_to "/schools/#{@school.id}/students"
-      # redirect_to "/schools/:id/students"
   end
 end 
