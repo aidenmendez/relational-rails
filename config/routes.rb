@@ -18,10 +18,6 @@ Rails.application.routes.draw do
   delete '/students/:id', to: 'students#destroy'
 
 
-
-
-
-
   get '/garages', to: 'garages#index'
   get '/garages/new', to: 'garages#new'
   post '/garages', to: 'garages#create'
