@@ -1,4 +1,5 @@
 <h1> <%= @garage.name %> Customers</h1>
+<%= link_to "Create customer", "/garages/#{@garage.id}/customers/new" %>
 
 <% @customers.each do |customer| %>
   <h2><%= customer.name %></h2>

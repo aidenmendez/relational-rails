@@ -12,12 +12,12 @@ School.destroy_all
 Student.destroy_all 
 
 garage_1 = Garage.create!(
-        address: "155 N St", 
-        name: "'Not A Lot' Parking Garage", 
-        spot_count: 200, 
-        cost: 12,
-        multi_level: true
-      )
+      address: "155 N St", 
+      name: "'Not A Lot' Parking Garage", 
+      spot_count: 200, 
+      cost: 12,
+      multi_level: true
+    )
 
 garage_2 = Garage.create!(
         name: "'Right On So Many Levels' Indoor Parking",
