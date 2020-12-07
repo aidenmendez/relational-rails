@@ -25,4 +25,25 @@ RSpec.describe "customer show page", type: :feature do
       expect(page).to have_content("Currently parked: #{customer_1.currently_parked}")
       expect(page).to have_content("Parking Garage: #{customer_1.garage.name}")
   end
+
+  it "can delete a customer" do
+    garage_1 = Garage.create!(
+      address: "155 N St", 
+      name: "'Not A Lot' Parking Garage", 
+      spot_count: 200, 
+      cost: 12,
+      multi_level: true
+    )
+
+    customer_2 = garage_1.customers.create!(
+      name: 'Tenisha Kehl',
+      license_plate: 'W-350I',
+      member_since: 2012,
+      currently_parked: true
+    )
+
+    visit("/customers/#{ customer_2.id }")
+    click_link("Delete Customer")
+    expect(current_path).to eq("/customers")
+  end
 end

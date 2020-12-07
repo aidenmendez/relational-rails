@@ -20,7 +20,11 @@ class CustomersController < ApplicationController
       member_since: params[:member_since]
     })
     redirect_to "/customers/#{customer.id}"
+  end
 
-
+  def destroy
+    customer = Customer.find(params[:id])
+    customer.destroy
+    redirect_to '/customers'
   end
 end

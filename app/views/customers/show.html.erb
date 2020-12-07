@@ -1,4 +1,5 @@
-<h1><%= @customer.name %>
+<h1><%= @customer.name %></h1>
+<%= link_to "Delete Customer", "/customers/#{ @customer.id }", method: :delete %>
 <p>License plate: <%= @customer.license_plate %></p>
 <p>Member since: <%= @customer.member_since %></p>
 <p>Parking Garage: <%= @customer.garage.name %></p>
