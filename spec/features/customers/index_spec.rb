@@ -29,6 +29,7 @@ RSpec.describe "customer index page", type: :feature do
     visit "/customers"
 
     expect(page).to have_content(customer_1.name)
+    expect(page).to have_content("Update Customer")
     expect(page).to have_content("License plate: #{customer_1.license_plate}")
     expect(page).to have_content("Member since: #{customer_1.member_since}")
     expect(page).to have_content("Currently parked: #{customer_1.currently_parked}")

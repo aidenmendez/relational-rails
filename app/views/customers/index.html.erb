@@ -3,6 +3,8 @@
 <% @customers.each do |customer| %>
   <h2><%= customer.name %></h2>
 
+  <%= link_to "Update Customer", "/customers/#{customer.id}/edit" %>
+
   <p>License plate: <%= customer.license_plate %></p>
 
   <p>Member since: <%= customer.member_since %></p>

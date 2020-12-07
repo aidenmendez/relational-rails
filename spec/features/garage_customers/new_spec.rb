@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "As a user", type: :feature do
-  describe "When I visit /garages/id/customers/new" do
+  describe "when I visit /garages/id/customers/new" do
     it "can create a new customer for the garage" do
       garage_1 = Garage.create!(
         address: "155 N St", 
