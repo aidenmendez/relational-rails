@@ -61,5 +61,27 @@ RSpec.describe "As a visitor" do
 # the child's data is updated,
 # and I am redirected to the Child Show page where I see the Child's updated information
     end
+    it " I see a link to delete the student" do 
+          school_1 = School.create!(
+          name: "Strive Prep", 
+          number_of_teachers: 30, 
+          is_public: false  
+      )
+          student_1 = Student.create!(
+          name: "Naruto Uzumaki", 
+          grade: 8, 
+          in_district: true, 
+          school_id: school_1.id
+      )
+
+     
+      visit "/students/#{student_1.id}"
+      
+      expect(page).to have_link("Delete Student")
+      click_link "Delete Student"
+     
+      expect(current_path).to eq("/students")
+      expect(page).to_not have_content(student_1.name)
+    end 
   end
 end
