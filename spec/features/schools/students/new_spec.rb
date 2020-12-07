@@ -15,7 +15,7 @@ RSpec.describe "As a visitor" do
       fill_in "Grade", with: "6"
       fill_in "In district", with: 'true'
 
-      save_and_open_page
+ 
       click_button "Create Student"
       expect(current_path).to eq("/schools/#{school_1.id}/students")
     end
