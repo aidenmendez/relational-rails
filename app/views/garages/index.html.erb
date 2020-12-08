@@ -2,6 +2,7 @@
 
 <li><a href='/garages/new'>New Garage</a></li><br/>
 
+
 <% @garages.sort_by_created_at.each do |garage| %> <br/>
   <p> <%= link_to "#{garage.name}", "/garages/#{garage.id}" %> 
     | created <%= garage.created_at.to_formatted_s(:long) %> </p>
