@@ -1,6 +1,6 @@
 class GaragesController < ApplicationController
   def index
-    @garages= Garage.all
+    @garages= Garage.sort_by_bool_then_created_at
   end
 
   def show
