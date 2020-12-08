@@ -1,14 +1,14 @@
 <h1>Customers</h1>
 
-<% @customers.each do |customer| %>
+
+<% @customers.sort_by_date.each do |customer| %>
 <h2><%= link_to customer.name, "/customers/#{customer.id}"%></h2>
  
-
   <%= link_to "Update Customer", "/customers/#{customer.id}/edit" %>
 
   <p>License plate: <%= customer.license_plate %></p>
 
-  <p>Member since: <%= customer.member_since %></p>
+  <p>Member since: <%= customer.created_at.to_formatted_s(:long) %></p>
 
   <p>Parking Garage: <%= customer.garage.name %></p>
 
