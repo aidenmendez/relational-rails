@@ -4,4 +4,7 @@ class Garage < ApplicationRecord
   # dependent: :destroy destroys child elements
   has_many :customers, dependent: :destroy
 
+  def self.sort_by_created_at
+    order(:created_at).reverse_order
+  end
 end

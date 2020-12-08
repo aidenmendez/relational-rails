@@ -1,7 +1,7 @@
 <h1>Customers</h1>
 
 
-<% @customers.sort_by_date.each do |customer| %>
+<% @customers.sort_by_created_at.each do |customer| %>
 <h2><%= link_to customer.name, "/customers/#{customer.id}"%></h2>
  
   <%= link_to "Update Customer", "/customers/#{customer.id}/edit" %>

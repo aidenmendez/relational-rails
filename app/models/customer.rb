@@ -3,7 +3,7 @@ class Customer < ApplicationRecord
   validates_presence_of :member_since
   belongs_to :garage
 
-  def self.sort_by_date
-    order(:created_at)
+  def self.sort_by_created_at
+    order(:created_at).reverse_order
   end
 end
