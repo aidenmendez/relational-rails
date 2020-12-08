@@ -16,7 +16,7 @@ class GaragesController < ApplicationController
       address: params[:garage][:address],
       spot_count: params[:garage][:spot_count],
       cost: params[:garage][:cost],
-      multi_level: params[:garage][:cost]
+      multi_level: params[:garage][:multi_level]
     })
     garage.save!
     redirect_to '/garages' 
