@@ -1,0 +1,9 @@
+<%= form_tag "/schools/#{@school.id}/students" do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+  <%= label_tag :grade %>
+  <%= text_field_tag :grade %>
+  <%= label_tag :in_district %>
+  <%= text_field_tag :in_district %>
+  <%= submit_tag 'Create Student' %>
+<% end %>
