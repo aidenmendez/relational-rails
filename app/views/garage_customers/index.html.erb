@@ -1,8 +1,10 @@
 <h1> <%= @garage.name %> Customers</h1>
 <%= link_to "Create customer", "/garages/#{@garage.id}/customers/new" %>
 
+<p>Customer count: <%= @customers.count %></p><br/>
+
 <% @customers.each do |customer| %>
-  <h2><%= customer.name %></h2>
+  <p><b><%= customer.name %></b></h2>
 
   <p>License plate: <%= customer.license_plate %></p>
 
