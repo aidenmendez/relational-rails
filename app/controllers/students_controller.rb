@@ -1,10 +1,13 @@
 class StudentsController < ApplicationController
   def index 
-    @students = Student.all
-  end
+    if params[:grade] 
+      @students = Student.student_by_grade(params[:grade])
+    else 
+      @students = Student.in_district_sorted
+    end
+  end 
 
   def show 
-    # require 'pry'; binding.pry
    @student =  Student.find(params[:id])
   end
 
@@ -27,5 +30,12 @@ class StudentsController < ApplicationController
   def destroy
     Student.destroy(params[:id])
     redirect_to '/students'
+  end
+
+  def search 
+    # require 'pry'; binding.pry
+    # @students = Student.student_by_grade(params[:grade])
+    # redirect_to '/students'
+
   end
 end 
