@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get '/garages/:id', to: 'garages#show'
   patch '/garages/:id', to: 'garages#update'
   delete '/garages/:id', to: 'garages#destroy'
+  
 
   get '/customers', to: 'customers#index'
   get '/customers/:id', to: 'customers#show'

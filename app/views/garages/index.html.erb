@@ -1,7 +1,11 @@
 <h1>Garages</h1>
 <hr>
 <li><a href='/garages/new'>New Garage</a></li><br/>
-
+<%= form_tag "/garages/", method: :get do %>
+  <%= label_tag "Filter by minimum number of spots:" %>
+  <%= number_field_tag :threshold %><br/>
+  <%= submit_tag "Filter Garages" %>
+<% end %>
 
 <% @garages.each do |garage| %> <br/>
   <p> <%= link_to "#{garage.name}", "/garages/#{garage.id}" %> 

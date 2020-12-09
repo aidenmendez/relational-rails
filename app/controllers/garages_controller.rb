@@ -1,6 +1,6 @@
 class GaragesController < ApplicationController
   def index
-    @garages= Garage.sort_by_bool_then_created_at
+    @garages = Garage.sort_by_bool_then_created_at.filter_min_spots(params[:threshold])
   end
 
   def show

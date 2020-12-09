@@ -6,4 +6,9 @@ class Garage < ApplicationRecord
   def self.sort_by_bool_then_created_at
     order(multi_level: :desc, created_at: :desc)
   end
+
+  def self.filter_min_spots(input)
+    return all if input.blank?
+    where("spot_count >= ?", input)
+  end
 end
