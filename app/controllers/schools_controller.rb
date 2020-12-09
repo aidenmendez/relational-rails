@@ -1,6 +1,6 @@
 class SchoolsController < ApplicationController
   def index 
-    @schools = School.all
+    @schools = School.is_public_sorted
   end
 
   def new
@@ -8,7 +8,6 @@ class SchoolsController < ApplicationController
   end
   
   def create 
-    # require 'pry'; binding.pry
     school = School.new({
     name: params[:name],
     number_of_teachers: params[:number_of_teachers],
