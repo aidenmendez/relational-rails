@@ -1,7 +1,13 @@
 <h1> All Schools </h1>
+<h2><%= link_to "List of all students", "/students" %></h2>
+<h2><%= link_to "New School", '/schools/new' %></h2>
 
-<% @schools.each do |school|%>
+<% @schools.sorted_schools.each do |school|%><br>
+
  <h2><%= link_to "#{school.name}", "/schools/#{school.id}" %></h2>
+<p> <%= link_to "Update School", "/schools/#{school.id}/edit" %></p>
+<p><%= link_to "Delete School", "/schools/#{school.id}", method: :delete %></p>
+
+ <p> Created: <%= school.formatted_creation_date %></p><br>
  <% end %>
 
-<%= link_to "New School", '/schools/new' %>
