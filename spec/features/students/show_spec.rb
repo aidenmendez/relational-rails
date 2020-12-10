@@ -36,17 +36,13 @@ RSpec.describe "As a visitor" do
       )
 
       visit "/students/#{student_1.id}"
-      # When I visit a Child Show page
+      
       expect(page).to have_link("Update Student")
-      # Then I see a link to update that Child "Update Child"
+     
       click_link "Update Student"
-# When I click the link
-# I am taken to '/child_table_name/:id/edit' where I see a form to edit the child's attributes:
+
+
       expect(current_path).to eq("/students/#{student_1.id}/edit")
-# When I click the button to submit the form "Update Child"
-# Then a `PATCH` request is se '/nt tochild_table_name/:id',
-# the child's data is updated,
-# and I am redirected to the Child Show page where I see the Child's updated information
     end
     it " I see a link to delete the student" do 
           school_1 = School.create!(
@@ -61,7 +57,6 @@ RSpec.describe "As a visitor" do
           school_id: school_1.id
       )
 
-     
       visit "/students/#{student_1.id}"
       
       expect(page).to have_link("Delete Student")

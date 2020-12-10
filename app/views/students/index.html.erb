@@ -1,7 +1,18 @@
 <h1> All Students </h1>
 
+<h3> Search by Grade </h3>
+<%= form_tag "/students", method: :patch do %>
+  <%= label_tag :grade %>
+  <%= text_field_tag :grade %> 
+
+  <%= submit_tag 'Search by Grade' %>
+<% end %><br>
+
 <%  @students.each do |student| %>
-<h2> Name: <%= link_to "#{student.name}", "/students/#{student.id}" %></h2>
-<h2> Grade: <%= "#{student.grade}" %></h2>
-<h2> In District?: <%= "#{student.in_district}" %></h2>
+<p> Name: <%= link_to "#{student.name}", "/students/#{student.id}" %></p>
+<p> Grade: <%= "#{student.grade}" %></p>
+<p> In District?: <%= "#{student.in_district}" %></p>
+<p>Date Registered: <%= "#{student.formatted_registration_date}" %></p>  
+<p><%= link_to "Update Student", "/students/#{student.id}/edit" %></p>
+<p><%= link_to "Delete Student", "/students/#{student.id}", method: :delete %></p><br>
 <% end  %>

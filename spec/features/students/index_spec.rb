@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-# When I visit '/child_table_name'
-# Then I see each Child in the system including the Child's attributes:
 RSpec.describe "As a visitor", type: :feature do
 
   describe "When I visit '/students'" do
@@ -59,17 +57,6 @@ RSpec.describe "As a visitor", type: :feature do
       expect(page).to have_content("#{student_4.name}")
       expect(page).to have_content("#{student_4.grade}")
       expect(page).to have_content("#{student_4.in_district}")
-      # expect(page).to have_content("#{student_1.school_id}") 
-      # Dont test for school_id on page  or any id 
-    end
-  #  it "I can see a link to add a new student" do 
-
-  #    visit 'schools/:id/students'
-
-  #    click_link "Add A Student"
-
-  #    expect(current_path).to eq('schools/:id/students/new')
-
-  end 
+    end 
 end 
 

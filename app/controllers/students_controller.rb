@@ -1,10 +1,13 @@
 class StudentsController < ApplicationController
   def index 
-    @students = Student.all
-  end
+    if params[:grade] 
+      @students = Student.student_by_grade(params[:grade])
+    else 
+      @students = Student.in_district_sorted_name_sorted
+    end
+  end 
 
   def show 
-    # require 'pry'; binding.pry
    @student =  Student.find(params[:id])
   end
 
@@ -13,7 +16,6 @@ class StudentsController < ApplicationController
   end
 
   def update  
-    # require 'pry'; binding.pry
     @student =  Student.find(params[:id])
     @student.update({
       name: params[:name], 

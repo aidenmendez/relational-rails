@@ -1,6 +1,14 @@
 class SchoolsController < ApplicationController
   def index 
-    @schools = School.all
+    if params[:sorted] 
+      @schools = School.sort_by_students_count
+    else
+      @schools = School.sorted_schools
+    end 
+  end
+
+  def sorted_index
+    @schools = School.number_of_students_sorted
   end
 
   def new
@@ -8,7 +16,6 @@ class SchoolsController < ApplicationController
   end
   
   def create 
-    # require 'pry'; binding.pry
     school = School.new({
     name: params[:name],
     number_of_teachers: params[:number_of_teachers],

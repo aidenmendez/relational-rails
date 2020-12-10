@@ -1,11 +1,7 @@
 require 'rails_helper'
-# User Story 2, Parent Show (x2)
-# As a visitor
+
 RSpec.describe "As a visitor" do
-# When I visit '/parents/:id'
   describe "When I visit '/schools/:id'" do
-# Then I see the parent with that id including the parent's attributes:
-# - data from each column that is on the parent table
     it "I see a school's attributes" do 
       school_1 = School.create!(
           name: "Strive Prep", 

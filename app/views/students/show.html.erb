@@ -1,9 +1,10 @@
-<h1> Attributes for <%= @student.name %></h1>
+<h1> Student Information for <%= link_to "#{@student.name}", "/students/#{@student.id}" %></h1>
 
-<h3>Name: <%= @student.name %></h3>
+
+<h3>Name: <%= link_to "#{@student.name}", "/students/#{@student.id}" %></h3>
  <h3>Grade: <%= @student.grade %></h3>
- <h3>In District: <%= @student.in_district %></h3>
  <h3>ID: <%= @student.id %></h3>
+ <h3>In District: <%= @student.in_district %></h3>
 
- <%= link_to "Update Student", "/students/#{@student.id}/edit" %>
+<%= link_to "Update Student", "/students/#{@student.id}/edit" %>
 <%= link_to "Delete Student", "/students/#{@student.id}", method: :delete %>
