@@ -1,10 +1,13 @@
 <h1> List of Students for <%= link_to "#{@school.name}", "/schools/#{@school.id}"  %></h1>
 <h2> Number of Enrolled Students: <%= @school.student_count %></h2>
 <h2><%= link_to "Add A Student", "/schools/#{@school.id}/students/new" %></h2>
+
 <% @school.registered_students_sorted.each do |student|%>
  <p>Student Name: <%= link_to "#{student.name}", "/students/#{student.id}" %></p>
  <p>Grade: <%= "#{student.grade}" %></p>
  <p>Date Registered: <%= "#{student.formatted_registration_date}" %></p>
  <p>Are they in District? <%= "#{student.in_district}" %></p><br>
  <% end %>
+
+ 
 
