@@ -1,8 +1,7 @@
 class SchoolsController < ApplicationController
   def index 
-    # require 'pry'; binding.pry
     if params[:sorted] 
-      @schools = School.number_of_students_sorted
+      @schools = School.sort_by_students_count
     else
       @schools = School.sorted_schools
     end 

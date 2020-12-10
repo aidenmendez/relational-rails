@@ -16,7 +16,6 @@ class StudentsController < ApplicationController
   end
 
   def update  
-    # require 'pry'; binding.pry
     @student =  Student.find(params[:id])
     @student.update({
       name: params[:name], 
@@ -30,12 +29,5 @@ class StudentsController < ApplicationController
   def destroy
     Student.destroy(params[:id])
     redirect_to '/students'
-  end
-
-  def search 
-    # require 'pry'; binding.pry
-    # @students = Student.student_by_grade(params[:grade])
-    # redirect_to '/students'
-
   end
 end 
