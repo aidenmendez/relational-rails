@@ -11,4 +11,13 @@ class Garage < ApplicationRecord
     return all if input.blank?
     where("spot_count >= ?", input)
   end
+
+  def self.sort_by_customer_count
+    select('garages.*, count(*) as count').joins(:customers).group(:id).order(count: :desc)
+  end
+
+  def sort_alphabet
+    customers.order(:name)
+  end
+
 end

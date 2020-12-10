@@ -1,15 +1,19 @@
 <h1> <%= @garage.name %> </h1>
 
-<%= link_to "View customers", "/garages/#{ @garage.id }/customers" %><br/>
-<%= link_to "Update", "/garages/#{ @garage.id}/edit" %> <br/>
-<%= link_to "Delete", "/garages/#{ @garage.id }", method: :delete%>
+<h3>Menu</h3>
+<ul>
+  <li><%= link_to "All Customers", customers_path %></li><br/>
+  <li><%= link_to "All Garages", garages_path %></li><br/>
+  <li><%= link_to "View customers", "/garages/#{ @garage.id }/customers" %></li><br/>
+  <li><%= link_to "Update", "/garages/#{ @garage.id}/edit" %> </li><br/>
+  <li><%= link_to "Delete", "/garages/#{ @garage.id }", method: :delete%> </li>
+</ul>
+<hr>
 
 <%# button instead of link %>
 <%# <%= button_to 'Delete Garage', "/garages/#{ @garage.id }", method: :delete %>
-
-<ul>
-  <li> address: <%= @garage.address %> </li>
-  <li> cost: <%= @garage.cost %> </li>
-  <li> multi-level: <%= @garage.multi_level %> </li>
-  <li> spot count: <%= @garage.spot_count %> </li>
-</ul>
+  <h3>Details</h3>
+   <li>address: <%= @garage.address %></li> <br/>
+   <li>cost: <%= @garage.cost %></li> <br/>
+   <li>multi-level: <%= @garage.multi_level %></li> <br/>
+   <li>spot count: <%= @garage.spot_count %></li> <br/>

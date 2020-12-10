@@ -1,7 +1,11 @@
 class GarageCustomersController < ApplicationController
   def index
     @garage = Garage.find(params[:id])
-    @customers = @garage.customers
+    if params[:alpha_sort].present?
+      @customers = @garage.sort_alphabet
+    else
+      @customers = @garage.customers
+    end
   end
 
   def new

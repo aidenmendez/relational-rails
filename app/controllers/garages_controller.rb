@@ -1,6 +1,10 @@
 class GaragesController < ApplicationController
   def index
-    @garages = Garage.sort_by_bool_then_created_at.filter_min_spots(params[:threshold])
+    if params[:sort_bool].present?
+      @garages = Garage.sort_by_customer_count
+    else
+      @garages = Garage.sort_by_bool_then_created_at.filter_min_spots(params[:threshold])
+    end
   end
 
   def show

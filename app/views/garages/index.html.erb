@@ -1,13 +1,25 @@
 <h1>Garages</h1>
 <hr>
-<li><a href='/garages/new'>New Garage</a></li><br/>
+<h3>Menu</h3>
+<ul>
+  <li><%= link_to "All Customers", customers_path %></li><br/>
+  <li><%= link_to "All Garages", garages_path %></li><br/>
+  <li><a href='/garages/new'>New Garage</a></li><br/>
+  <li><%= link_to "Sort by number of customers", garages_path(sort_bool:"true") %></li>
+</ul>
+<hr>
+<h3>All Garages</h3>
 <%= form_tag "/garages/", method: :get do %>
-  <%= label_tag "Filter by minimum number of spots:" %>
-  <%= number_field_tag :threshold %><br/>
-  <%= submit_tag "Filter Garages" %>
+  <%= label_tag "Filter by minimum number of spots:"%>
+  <%= number_field_tag :threshold, :size=>"5" %>
+  <%= submit_tag "Filter" %>
 <% end %>
 
 <% @garages.each do |garage| %> <br/>
-  <p> <%= link_to "#{garage.name}", "/garages/#{garage.id}" %> 
-    | created <%= garage.created_at.to_formatted_s(:long) %> </p>
+  <li> <%= link_to "#{garage.name}", "/garages/#{garage.id}" %> 
+    | <%= link_to "Update", "/garages/#{ garage.id }/edit" %>
+    | <%= link_to "Delete", "/garages/#{ garage.id }", method: :delete%>
+    | spots: <%= garage.spot_count %>  
+    | number of customers: <%= garage.customers.count %>
+    | created on <%= garage.created_at.to_formatted_s(:long) %> </li>
 <% end %>
