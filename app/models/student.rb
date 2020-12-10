@@ -11,15 +11,15 @@ class Student < ApplicationRecord
     created_at.to_formatted_s(:long) 
   end
 
-  def self.in_district_sorted
-    Student.all.order(in_district: :desc)
+  def self.in_district_sorted_name_sorted
+    Student.all.order(in_district: :desc).order(name: :asc)
   end
 
   def self.student_by_grade(number_grade)
     Student.all.where(grade: number_grade).order(in_district: :desc)
   end
 
-  def self.student_alphabetical
-    Student.all.order(name: :asc)
-  end
+  # def self.student_alphabetical
+  #   Student.all.order(name: :asc)
+  # end
 end 

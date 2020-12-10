@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
     if params[:grade] 
       @students = Student.student_by_grade(params[:grade])
     else 
-      @students = Student.in_district_sorted
+      @students = Student.in_district_sorted_name_sorted
     end
   end 
 
