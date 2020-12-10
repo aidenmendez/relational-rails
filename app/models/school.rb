@@ -4,11 +4,11 @@ class School < ApplicationRecord
   has_many :students, dependent: :destroy 
 
   def registered_students_sorted
-    students.order(created_at: :desc)
+    students.order(created_at: :desc).order(name: :asc)
   end
 
   def self.sorted_schools 
-    order(created_at: :desc)
+    order(created_at: :desc).order(is_public: :desc)
   end
 
   def formatted_creation_date
@@ -19,11 +19,18 @@ class School < ApplicationRecord
     students.count
   end
 
-  def self.is_public_sorted
-    School.all.order(is_public: :desc)
+  # def self.is_public_sorted
+  #   School.all.order(is_public: :desc)
+  # end
+
+  def student_alphabetical
+    students.order(name: :asc)
   end
 
+
+
   def self.number_of_students_sorted
-require 'pry'; binding.pry
+    sorted = School.all.sort_by { |school| school.students.count }
+    sorted.reverse
   end
-end
+end 

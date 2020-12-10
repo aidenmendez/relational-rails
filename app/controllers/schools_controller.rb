@@ -1,6 +1,15 @@
 class SchoolsController < ApplicationController
   def index 
-    @schools = School.is_public_sorted
+    # require 'pry'; binding.pry
+    if params[:sorted] 
+      @schools = School.number_of_students_sorted
+    else
+      @schools = School.sorted_schools
+    end 
+  end
+
+  def sorted_index
+    @schools = School.number_of_students_sorted
   end
 
   def new
