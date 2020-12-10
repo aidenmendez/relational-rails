@@ -22,17 +22,18 @@ Rails.application.routes.draw do
   get '/garages/new', to: 'garages#new'
   post '/garages', to: 'garages#create'
   get '/garages/:id/edit', to: 'garages#edit'
-  get '/garages/:id', to: 'garages#show'
+  get '/garages/:id', to: 'garages#show', as: "garages_show"
   patch '/garages/:id', to: 'garages#update'
   delete '/garages/:id', to: 'garages#destroy'
+  
 
   get '/customers', to: 'customers#index'
-  get '/customers/:id', to: 'customers#show'
+  get '/customers/:id', to: 'customers#show', as: "customers_show"
   get '/customers/:id/edit', to: 'customers#edit'
   patch '/customers/:id', to: 'customers#update'
   delete '/customers/:id', to: 'customers#destroy'
 
-  get '/garages/:id/customers', to: 'garage_customers#index'
+  get '/garages/:id/customers', to: 'garage_customers#index', as: "garage_customers"
   get '/garages/:id/customers/new', to: 'garage_customers#new'
   post '/garages/:id/customers', to: 'garage_customers#create'
 end

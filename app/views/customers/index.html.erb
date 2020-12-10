@@ -1,16 +1,24 @@
 <h1>Customers</h1>
-
-
-<% @customers.sort_by_date.each do |customer| %>
-<h2><%= link_to customer.name, "/customers/#{customer.id}"%></h2>
+<hr>
+<h3>Menu</h3>
+<ul>
+  <li><%= link_to "All Customers", customers_path %></li><br/>
+  <li><%= link_to "All Garages", garages_path %></li><br/>
+</ul>
+<hr>
+<% @customers.each do |customer| %> 
+  <p><b><%= link_to customer.name, "/customers/#{customer.id}"%></b></p>
  
-  <%= link_to "Update Customer", "/customers/#{customer.id}/edit" %>
+  <%= link_to "Update", "/customers/#{customer.id}/edit" %>
+
+  <%= link_to "Delete", "/customers/#{ customer.id }", method: :delete %>
 
   <p>License plate: <%= customer.license_plate %></p>
 
   <p>Member since: <%= customer.created_at.to_formatted_s(:long) %></p>
 
-  <p>Parking Garage: <%= customer.garage.name %></p>
+  <p>Parking Garage:</p> <%= link_to "#{customer.garage.name}", garages_show_path(:id => customer.garage_id) %>
 
   <p>Currently parked: <%= customer.currently_parked %></p><br/>
+  
 <% end %>

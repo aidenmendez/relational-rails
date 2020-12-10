@@ -1,8 +1,21 @@
 <h1> <%= @garage.name %> Customers</h1>
-<%= link_to "Create customer", "/garages/#{@garage.id}/customers/new" %>
+<hr>
+<h3>Menu</h3>
+<ul>
+  <li><%= link_to "All Customers", customers_show_path %></li><br/>
+  <li><%= link_to "All Garages", garages_show_path %></li><br/>
+  <li><%= link_to "Create customer", "/garages/#{@garage.id}/customers/new" %></li><br/>
+  <li><%= link_to "Sort", garage_customers_path(@garage.id, alpha_sort: true) %></li>
+</ul>
+<p><b>Customer count: <%= @customers.count %></b></p><br/>
+<hr>
 
 <% @customers.each do |customer| %>
-  <h2><%= customer.name %></h2>
+  <h3><%= link_to "#{customer.name}", customers_show_path %></h3>
+
+  <%= link_to "Update", "/customers/#{ customer.id }/edit" %>
+
+  <%= link_to "Delete", "/customers/#{ customer.id }", method: :delete %>
 
   <p>License plate: <%= customer.license_plate %></p>
 
