@@ -2,9 +2,9 @@
 
 <h3>Menu</h3>
 <ul>
-  <li><%= link_to "All Customers", customers_path %></li><br/>
   <li><%= link_to "All Garages", garages_path %></li><br/>
-  <li><%= link_to "View customers", "/garages/#{ @garage.id }/customers" %></li><br/>
+  <li><%= link_to "All Customers", customers_path %></li><br/>
+  <li><%= link_to "All Garage Customers", "/garages/#{ @garage.id }/customers" %></li><br/>
   <li><%= link_to "Update", "/garages/#{ @garage.id}/edit" %> </li><br/>
   <li><%= link_to "Delete", "/garages/#{ @garage.id }", method: :delete%> </li>
 </ul>
