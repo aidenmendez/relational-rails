@@ -19,18 +19,11 @@ class School < ApplicationRecord
     students.count
   end
 
-  # def self.is_public_sorted
-  #   School.all.order(is_public: :desc)
-  # end
+  def self.sort_by_students_count
+    select('schools.*, count(*) as count').joins(:students).group(:id).order(count: :desc)
+  end
 
   def student_alphabetical
     students.order(name: :asc)
-  end
-
-
-
-  def self.number_of_students_sorted
-    sorted = School.all.sort_by { |school| school.students.count }
-    sorted.reverse
   end
 end 
