@@ -18,8 +18,4 @@ class Student < ApplicationRecord
   def self.student_by_grade(number_grade)
     Student.all.where(grade: number_grade).order(in_district: :desc)
   end
-
-  # def self.student_alphabetical
-  #   Student.all.order(name: :asc)
-  # end
 end 

@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "As a visitor" do
-# Then I see each Child that is associated with that Parent with each Child's attributes:
-# RSpec.describe "As a visitor", type: :feature do
+
   describe "When I visit '/schools/:id/students'" do
 
     it "I see all students associated eith the school and it's attributes" do 
@@ -41,7 +40,7 @@ RSpec.describe "As a visitor" do
       )
 
       visit "/schools/#{school_1.id}/students"
-# save_and_open_page
+
       expect(page).to have_content("#{school_1.name}")
 
       expect(page).to have_content("#{student_1.name}")
@@ -96,10 +95,10 @@ RSpec.describe "As a visitor" do
       )
 
      visit "/schools/#{school_1.id}/students"
-# save_and_open_page
+
      click_link "Add A Student"
 
-     expect(current_path).to eq("schools/#{school_1.id}/students/new")
+     expect(current_path).to eq("/schools/#{school_1.id}/students/new")
   end 
 end 
 end 

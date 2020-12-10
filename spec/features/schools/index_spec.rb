@@ -15,9 +15,8 @@ RSpec.describe "As a visitor" do
     end 
     it "I see a link to create a new school" do 
      
-      visit "/schools"
-# save_and_open_page
-      # expect(page).to have_content("#{school_1.name}")
+    visit "/schools"
+
      click_link 'New School'
 
      expect(current_path).to eq('/schools/new')

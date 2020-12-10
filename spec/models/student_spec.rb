@@ -7,7 +7,6 @@ RSpec.describe Student, type: :model do
   describe "validations" do 
     it { should validate_presence_of :name} 
     it { should validate_presence_of :grade}
-    # it { should allow_value(nil).for(:is_public) }
   end
   describe "class_methods" do 
     describe '.register_sorted' do 
@@ -37,8 +36,7 @@ RSpec.describe Student, type: :model do
           in_district: true,
           school_id: school_1.id 
           )
-
-          # @students = [student_1, student_2, student_3]
+          
         expect(Student.register_sorted.first).to eq(Student.first)
       end
     end

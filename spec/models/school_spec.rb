@@ -68,38 +68,7 @@ RSpec.describe School do
                 school_id: school_3.id 
       )
 
-      expect(School.number_of_students_sorted).to eq([school_1, school_2, school_3])
-    end
-    describe "instance methods" do 
-      describe '#student_alphabetical' do 
-      it 'returns the students sorted by alphabet'do 
-          school_1 = School.create!(
-          name: "Strive Prep", 
-          number_of_teachers: 30, 
-          is_public: false       
-           )
-            student_1 = Student.create!(
-                name: "Naruto Uzumaki", 
-                grade: 8, 
-                in_district: true, 
-                school_id: school_1.id
-             )
-
-            student_2 = Student.create!(
-                      name: "Tanjiro Kamado", 
-                      grade: 7,
-                      in_district: true,
-                      school_id: school_1.id 
-            )
-
-            student_3 = Student.create!(
-                      name: "Itachi Uchiha", 
-                      grade: 7,
-                      in_district: true,
-                      school_id: school_1.id 
-            )
-      end
-
+      expect(School.sort_by_students_count).to eq([school_1, school_2, school_3])
     end
   end
 end 
